@@ -193,4 +193,15 @@ class Sensei_Class_Utils_Test extends WP_UnitTestCase {
         $this->assertEquals( $expected ,$array_zipped  );
     }
 
+    /**
+     * Test Sensei_Utils::sensei_remove_user_from_course 
+     * @since 1.9.7
+     */
+    public function testRemoveUserFromCourse() {
+      $this->assertTrue( method_exists( 'WooThemes_Sensei_Utils', 'sensei_remove_user_from_course'),
+          'The utils class function `sensei_remove_user_from_course` should exist ' );
+      $factory = new Sensei_Factory();
+      $course_user = wp_create_user( 'testRemoveUserFromCourseUser','password', 'testRemoveUserFromCourseUser@sensei-test.com'  );
+    }
+
 }// end test class
